@@ -20,7 +20,8 @@ tournament_table = Table(
     Column('city', String),
     Column('start', DateTime),
     Column('end', DateTime),
-    Column('timezone', String)
+    Column('timezone', String),
+    Column('season', Integer)
 )
 
 category_table = Table(
