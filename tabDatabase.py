@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, DateTime, ForeignKey, Float, Enum, \
     Index, text
 
-DB_PATH = 'sqlite:////mnt/c/Users/yusuf/Documents/PG/tabData/tmp.sqlite'
+DB_PATH = 'sqlite:////mnt/c/Users/yusuf/Documents/PG/tabData/tabroom.sqlite'
 tabEngine = create_engine(DB_PATH)
 metadata = MetaData()
 
@@ -95,10 +95,10 @@ entry_table = Table(
     'entry', metadata,
     Column('id', Integer, primary_key=True),
     Column('code', String),
-    Column('name', String),
-    Column('short_name', String),
+    Column('name', String, index=True),
+    Column('short_name', String, index=True),
     Column('school_name', String),
-    Column('school_code', String),
+    Column('school_code', String, index=True),
     Column('event', ForeignKey('event.id')),
     Column('team', ForeignKey('team.id'), index=True)
 )
