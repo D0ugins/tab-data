@@ -3,3 +3,4 @@
 !.idea/*
 !*.ipynb
 !*.py
+!environment.yml
